@@ -1,0 +1,19 @@
+<div class="pie-title">
+  <div class="chart-container">
+    <ngx-charts-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [doughnut]="true"
+      class="hide-tooltip"
+    >
+    </ngx-charts-pie-chart>
+    <div class="center-text" [ngStyle]="{ color: textColor }">
+      {{ percentage }}%
+    </div>
+  </div>
+  <p>
+    {{ CurrentNumber }}<strong>/{{ TotalNumber }}</strong>
+  </p>
+  <p>{{ PieTitle }}</p>
+</div>

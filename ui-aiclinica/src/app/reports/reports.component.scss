@@ -1,0 +1,35 @@
+mat-card {
+  padding: 12px;
+}
+h1 {
+  margin-bottom: 0;
+}
+.grid-container {
+  margin: 20px;
+}
+.dashboard-card {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.card-content {
+  width: 100%;
+  padding: 20px;
+  height: auto;
+  display: flex;
+}
+app-doughnut-echart {
+  width: 500px;
+  margin-right: 16px;
+}
