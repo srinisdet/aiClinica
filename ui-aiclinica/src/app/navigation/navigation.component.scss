@@ -8,6 +8,7 @@
 
 .sidenav-container {
   height: calc(100vh - 64px);
+  background-color: #f3f3f3;
 }
 
 .sidenav {
@@ -56,18 +57,23 @@
 .profile-button {
   background: none; /* Remove default button background */
   border: none; /* Remove default button border */
-  color: #fefefe; /* Text color */
+  color: #003212; /* Text color */
   font-size: 16px; /* Font size for the button text */
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically align icon and text */
   cursor: pointer; /* Change cursor on hover */
-  .profile-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 24px;
-    color: #042c22;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  img {
+    height: 36px;
+    width: 36px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+  span {
+    font-size: 16px;
   }
 }
+
 .mat-icon {
   margin-right: 8px; /* Add space between icon and text */
 }
@@ -134,13 +140,14 @@ mat-nav-list {
 
 .footer {
   width: 100%; /* Make the footer span the full width */
-  height: 64px; /* Set the height for the footer */
+  height: 48px; /* Set the height for the footer */
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
   background-color: #b3dcce; /* Material primary color */
   color: #00281b; /* Text color */
   margin-top: 38px; /* Optional: Add space between content and footer */
+  font-size: 16px;
 }
 
 .company-title {

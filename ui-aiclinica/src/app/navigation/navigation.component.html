@@ -26,9 +26,11 @@
       />
     </div>
     <mat-icon class="color-icon">notifications</mat-icon>
-    <button mat-button class="my-profile profile-button">
-      <mat-icon class="profile-icon">account_circle</mat-icon>
-      Steve Rogers
+    <button mat-button class="my-profile">
+      <div class="profile-button">
+        <img src="assets/images/nick.png" class="profile-picture" />
+        <span>Nick Fury</span>
+      </div>
     </button>
     <mat-menu #profileMenu="matMenu">
       <button mat-menu-item (click)="onSettings()">

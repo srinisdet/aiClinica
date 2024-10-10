@@ -1,10 +1,167 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="450px" gutterSize="16px">
+  <div class="dashboard-header">
+    <h2>Dashboard</h2>
+    <p>Explore insights and track research progress for Clinical Studies</p>
+  </div>
+  <mat-grid-list
+    cols="3"
+    rowHeight="500px"
+    gutterSize="0px"
+    class="dynamic-grid"
+  >
     <mat-grid-tile colspan="2" rowspan="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
-          <mat-card-title> Panel 1</mat-card-title></mat-card-header
+          <mat-card-title> My Reports</mat-card-title></mat-card-header
+        >
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-content">
+            <div class="report-list-container">
+              <mat-list class="report-list">
+                <mat-list-item class="report-table-header">
+                  <div class="report-row">
+                    <div class="report-col20">
+                      <span class="report-label">Submitted By</span>
+                    </div>
+                    <div class="report-col15">
+                      <span class="report-label">Date</span>
+                    </div>
+                    <div class="report-col30">
+                      <span class="report-label">Report Name</span>
+                    </div>
+                    <div class="report-col20 report-label">
+                      <span class="report-label">Status</span>
+                    </div>
+                    <div class="report-col15 report-label">
+                      <span class="report-label">Actions</span>
+                    </div>
+                  </div></mat-list-item
+                >
+                <!-- Iterate over each report and display in the list -->
+                <mat-list-item
+                  *ngFor="let report of reportData; let i = index"
+                  (click)="onRowClick(report)"
+                  [ngClass]="{
+                    'even-row': i % 2 === 0,
+                    'odd-row': i % 2 !== 0
+                  }"
+                  class="clickable-item"
+                >
+                  <div class="report-row">
+                    <!-- Submitted By -->
+                    <div class="report-col20">
+                      <div class="submitted-by">
+                        <img
+                          src="assets/images/nick.png"
+                          class="profile-picture"
+                        />
+                        <span class="report-value">{{
+                          report.submittedBy
+                        }}</span>
+                      </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="report-col15">
+                      <span class="report-value">{{ report.date }}</span>
+                    </div>
+
+                    <!-- Report Name -->
+                    <div class="report-col30">
+                      <span class="report-value">{{ report.reportName }}</span>
+                    </div>
+                    <!-- Status Name -->
+                    <div class="report-col20">
+                      <span class="report-value submittedby"
+                        ><mat-icon
+                          [ngClass]="{
+                            'green-icon': report.status === 'Submitted',
+                            'orange-icon': report.status === 'Pending',
+                            'red-icon': report.status === 'Overdue'
+                          }"
+                          >{{ getIcon(report.status) }}</mat-icon
+                        >{{ report.status }}</span
+                      >
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="report-col15">
+                      <button
+                        mat-button
+                        (click)="onActionClick($event, report)"
+                        class="view-report"
+                      >
+                        <!-- <i class="material-icons">picture_as_pdf</i> -->
+                        <span class="view-pdf">View</span>
+                      </button>
+                    </div>
+                  </div>
+                </mat-list-item>
+              </mat-list>
+              <button mat-button class="view-all">View all</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Tile 2 -->
+    <mat-grid-tile colspan="1" rowspan="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title> My Schedule</mat-card-title></mat-card-header
+        >
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-content">
+            <!-- <app-echart-vertical-bar></app-echart-vertical-bar> -->
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Select a date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Choose a date"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+            <mat-card class="calendar">
+              <mat-calendar
+                [(selected)]="selectedDate"
+                (selectedChange)="onDateSelected($event)"
+              ></mat-calendar>
+            </mat-card>
+            <div class="event-list" *ngIf="selectedDate">
+              <mat-card>
+                <h4>Events on {{ selectedDate | date : "fullDate" }}</h4>
+                <mat-list class="events">
+                  <mat-list-item *ngFor="let event of filteredEvents">
+                    <div class="event-item">
+                      <div class="icon"><mat-icon>event</mat-icon></div>
+                      <span class="event-name">{{ event.name }}</span>
+                      <span class="event-time">{{ event.time }}</span>
+                    </div>
+                  </mat-list-item>
+                  <div *ngIf="filteredEvents?.length === 0">
+                    No events for this day.
+                  </div>
+                </mat-list>
+              </mat-card>
+            </div>
+          </div></mat-card-content
+        >
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Tile 3 -->
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Total Research Analysis</mat-card-title
+          ></mat-card-header
         >
         <mat-card-content class="dashboard-card-content">
           <div class="card-content">
@@ -13,34 +170,8 @@
       </mat-card>
     </mat-grid-tile>
 
-    <!-- Tile 2 -->
-    <mat-grid-tile colspan="1" rowspan="2">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title> Panel 2</mat-card-title></mat-card-header
-        >
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-content">
-            <app-echart-vertical-bar></app-echart-vertical-bar></div
-        ></mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-    <!-- Tile 3 -->
-    <mat-grid-tile colspan="1" rowspan="2">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title> Panel 3</mat-card-title></mat-card-header
-        >
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-content">
-            <app-doughnut-echart></app-doughnut-echart></div
-        ></mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
     <!-- Tile 4 -->
-    <mat-grid-tile colspan="2" rowspan="1">
+    <!-- <mat-grid-tile colspan="2" rowspan="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title> Panel 3</mat-card-title></mat-card-header
@@ -57,7 +188,7 @@
             ></app-pie-grid></div
         ></mat-card-content>
       </mat-card>
-    </mat-grid-tile>
+    </mat-grid-tile> -->
   </mat-grid-list>
 </div>
 

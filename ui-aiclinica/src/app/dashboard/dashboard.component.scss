@@ -4,7 +4,17 @@ mat-card {
 .grid-container {
   margin: 8px;
 }
-
+.dashboard-header {
+  padding-left: 16px;
+  padding-top: 8px;
+  h2 {
+    margin: 0 !important;
+  }
+  p {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+}
 .dashboard-card {
   position: absolute;
   top: 15px;
@@ -24,7 +34,195 @@ mat-card {
   text-align: center;
 }
 .card-content {
-  width: 80%;
-  padding: 20px;
-  height: 80%;
+  width: -webkit-fill-available;
+  padding: 16px;
+  height: 400px;
+}
+
+.report-list-container {
+  width: 100%;
+  margin: 0;
+  box-shadow: none; /* Removed box shadow or any border */
+}
+mat-list {
+  padding: 0;
+}
+.report-list {
+  height: 300px; /* Fixed height */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+.report-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  cursor: pointer; /* Makes the row clickable */
+}
+
+.report-col20 {
+  width: 20%;
+  text-align: left;
+}
+.report-col30 {
+  width: 30%;
+  text-align: left;
+}
+.report-col15 {
+  width: 15%;
+  text-align: left;
+}
+
+.report-label {
+  font-weight: bold;
+  font-size: 16px;
+}
+.report-value {
+  font-size: 14px;
+}
+.report-table-header {
+  background-color: #def1f4;
+}
+.clickable-item:hover {
+  background-color: #d3efea; /* Adds hover effect */
+}
+/* Alternating row colors */
+.even-row {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* White background for odd rows */
+}
+
+.odd-row {
+  background-color: #eef5f7;
+}
+.mat-paginator {
+  margin-top: 20px;
+}
+button {
+  i {
+    margin-right: 4px;
+  }
+}
+.submittedby {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  mat-icon {
+    margin-right: 4px;
+  }
+}
+.submitted-by {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+.view-pdf {
+  font-weight: 400;
+}
+.view-report {
+  background-color: #def1eb;
+  border: 1px solid #cbece388;
+  border-radius: 32px;
+  span {
+    font-weight: 500;
+  }
+  &:hover {
+    transform: scale(1.05);
+    background-color: #094428;
+    color: #fdfdfd;
+  }
+}
+.view-all {
+  margin-top: 32px;
+  width: 180px;
+  background-color: #0c5533;
+  border-radius: 16px;
+
+  color: #fdfdfd;
+  padding: 0 16px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for transform and color */
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #094428;
+    color: #fdfdfd;
+  }
+}
+.green-icon {
+  color: green;
+}
+.orange-icon {
+  color: orange;
+}
+.red-icon {
+  color: red;
+}
+
+.calendar {
+  max-width: 400px;
+  margin: auto;
+}
+
+mat-calendar {
+  width: 100%;
+  height: auto;
+}
+.event-list {
+  mat-card {
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .event-list {
+    margin-top: 20px;
+  }
+
+  mat-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+.events {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+}
+.icon {
+  margin-right: 10px;
+  mat-icon {
+    vertical-align: bottom;
+  }
+}
+
+.event-name {
+  flex-grow: 1;
+  text-align: left; /* Ensure left alignment */
+  word-wrap: break-word;
+  padding-right: 10px;
+  overflow-wrap: break-word; /* Ensures words wrap correctly */
+}
+
+.event-time {
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
 }

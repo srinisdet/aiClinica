@@ -75,3 +75,18 @@ button {
 .view-pdf {
   font-weight: 400;
 }
+.submitted-by {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Creates a soft shadow */
+  }
+  span {
+    font-size: 14px;
+  }
+}

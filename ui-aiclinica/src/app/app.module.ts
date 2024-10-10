@@ -32,7 +32,22 @@ import { MatSortModule } from '@angular/material/sort';
 import { ReportsTable2Component } from './reports-table2/reports-table2.component';
 import { ReportsListComponent } from './reports-list/reports-list.component';
 import { FormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'DD/MM/YYYY',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +69,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
+    MatNativeDateModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
@@ -69,10 +85,13 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatSortModule,
     FormsModule,
+    MatDatepickerModule,
+    MatInputModule,
   ],
   providers: [
     provideAnimationsAsync(),
     provideCharts(withDefaultRegisterables()),
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
   bootstrap: [AppComponent],
 })

@@ -10,7 +10,7 @@ export class DoughnutEchartComponent {
   options: EChartsOption = {
     title: {
       left: '50%',
-      text: 'Report Analysis',
+      text: 'Molecules Report Analysis',
       subtext: 'Analysis at each category level',
       textAlign: 'center',
     },

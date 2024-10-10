@@ -10,45 +10,45 @@ export interface ReportData {
 
 const REPORT_DATA: ReportData[] = [
   {
-    submittedBy: 'Alice',
-    date: '2024-10-01',
-    reportName: 'Sales Report',
+    submittedBy: 'Bruce B',
+    date: '2024-10-11',
+    reportName: 'Molecules Report',
     actions: 'View',
   },
   {
-    submittedBy: 'Bob',
+    submittedBy: 'Tony S',
     date: '2024-10-02',
-    reportName: 'Revenue Report',
+    reportName: 'Rx Research Report',
     actions: 'View',
   },
   {
-    submittedBy: 'Charlie',
-    date: '2024-10-03',
-    reportName: 'Expense Report',
+    submittedBy: 'Shuri',
+    date: '2024-09-30',
+    reportName: 'Molecule Study Report',
     actions: 'View',
   },
   {
-    submittedBy: 'Bob',
-    date: '2024-10-02',
-    reportName: 'Revenue Report',
+    submittedBy: 'Tony S',
+    date: '2024-09-22',
+    reportName: 'Rx Research Report',
     actions: 'View',
   },
   {
-    submittedBy: 'Charlie',
-    date: '2024-10-03',
-    reportName: 'Expense Report',
+    submittedBy: 'Shuri',
+    date: '2024-09-18',
+    reportName: 'Molecule Study Report',
     actions: 'View',
   },
   {
-    submittedBy: 'Bob',
-    date: '2024-10-02',
-    reportName: 'Revenue Report',
+    submittedBy: 'Tony S',
+    date: '2024-09-12',
+    reportName: 'Rx Research Report',
     actions: 'View',
   },
   {
-    submittedBy: 'Charlie',
-    date: '2024-10-03',
-    reportName: 'Expense Report',
+    submittedBy: 'Shuri',
+    date: '2024-09-06',
+    reportName: 'Molecule Study Report',
     actions: 'View',
   },
   // Add more records...
@@ -86,5 +86,11 @@ export class ReportsListComponent implements OnInit {
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;
     this.paginatedReportData = this.reportData.slice(startIndex, endIndex);
+  }
+
+  getImage(person: string) {
+    if (person == 'Tony S') return 'assets/images/tony.jpg';
+    else if (person == 'Bruce B') return 'assets/images/bruce.png';
+    else return 'assets/images/shuri.png';
   }
 }
