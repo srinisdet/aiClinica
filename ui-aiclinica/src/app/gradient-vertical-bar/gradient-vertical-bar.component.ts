@@ -48,7 +48,7 @@ export class GradientVerticalBarComponent {
 
     this.options = {
       title: {
-        text: 'Check Console for Events',
+        text: 'Data Insights Per Study',
       },
       xAxis: {
         data: dataAxis,
@@ -97,8 +97,8 @@ export class GradientVerticalBarComponent {
           itemStyle: {
             color: new LinearGradient(0, 0, 0, 1, [
               { offset: 0, color: '#83bff6' },
-              { offset: 0.5, color: '#188df0' },
-              { offset: 1, color: '#188df0' },
+              { offset: 0.5, color: '#2d9510' },
+              { offset: 1, color: '#2d9510' },
             ]),
           },
           emphasis: {

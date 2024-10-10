@@ -25,6 +25,13 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ReportsComponent } from './reports/reports.component';
+import { ReportsTableComponent } from './reports-table/reports-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ReportsTable2Component } from './reports-table2/reports-table2.component';
+import { ReportsListComponent } from './reports-list/reports-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +45,9 @@ import { ReportsComponent } from './reports/reports.component';
     ProgressGuageComponent,
     CalendarComponent,
     ReportsComponent,
+    ReportsTableComponent,
+    ReportsTable2Component,
+    ReportsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +65,10 @@ import { ReportsComponent } from './reports/reports.component';
       echarts: () => import('echarts'),
     }),
     FontAwesomeModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync(),

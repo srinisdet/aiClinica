@@ -1,0 +1,30 @@
+.full-width-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+}
+
+.mat-cell {
+  cursor: pointer;
+}
+
+.mat-paginator {
+  margin-top: 20px;
+}
+
+.table-submittedby {
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  mat-icon {
+    margin-right: 4px;
+  }
+}
+button {
+  i {
+    margin-right: 4px;
+  }
+}

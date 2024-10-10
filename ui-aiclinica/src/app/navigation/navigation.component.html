@@ -1,45 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard" class="menu-item"
-        ><i class="material-icons">dashboard</i><span>Dashboard</span></a
-      >
-      <a mat-list-item routerLink="/reports" class="menu-item"
-        ><i class="material-icons">document_scanner</i><span>Reports</span></a
-      >
-      <a mat-list-item routerLink="/calendar" class="menu-item"
-        ><i class="material-icons">calendar_month</i><span>Calendar</span></a
-      >
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      @if (isHandset$ | async) {
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      }
-      <span>ui-aiclinica</span>
-    </mat-toolbar>
-    <div class="router-outlet"><router-outlet></router-outlet></div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-<!-- 
-<mat-toolbar color="primary">
+<mat-toolbar class="top-nav">
   @if (isHandset$ | async) {
   <button
     type="button"
@@ -50,6 +9,84 @@
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
   }
-  <span>ui-aiclinica</span>
+  <div class="company-title">
+    <img src="assets/images/logo.png" alt="AiClinica" /> <span>AiClinica</span>
+  </div>
+  <span class="spacer"></span>
+  <nav class="nav">
+    <!-- Search Icon & Input -->
+    <div class="search-container" [class.expanded]="isSearchExpanded">
+      <mat-icon class="search-icon" (click)="toggleSearch()">search</mat-icon>
+      <input
+        type="text"
+        matInput
+        placeholder="Search"
+        [(ngModel)]="searchQuery"
+        class="search-input"
+      />
+    </div>
+    <mat-icon class="color-icon">notifications</mat-icon>
+    <button mat-button class="my-profile profile-button">
+      <mat-icon class="profile-icon">account_circle</mat-icon>
+      Steve Rogers
+    </button>
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item (click)="onSettings()">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item (click)="onLogout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </nav>
 </mat-toolbar>
-<app-dashboard></app-dashboard> -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="/dashboard"
+        routerLinkActive="active-nav"
+        class="mat-list-item"
+        ><span class="menu-item"
+          ><i class="material-icons">dashboard</i><span>Dashboard</span></span
+        ></a
+      >
+      <a
+        mat-list-item
+        routerLink="/reports"
+        routerLinkActive="active-nav"
+        class="mat-list-item"
+        ><span class="menu-item"
+          ><i class="material-icons">document_scanner</i
+          ><span>Reports</span></span
+        ></a
+      >
+      <a
+        mat-list-item
+        routerLink="/calendar"
+        routerLinkActive="active-nav"
+        class="mat-list-item"
+        ><span class="menu-item"
+          ><i class="material-icons">calendar_month</i
+          ><span>Calendar</span></span
+        ></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="router-outlet"><router-outlet></router-outlet></div>
+    <mat-toolbar color="primary" class="footer">
+      <span>© 2024 AiClinica - All rights reserved</span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

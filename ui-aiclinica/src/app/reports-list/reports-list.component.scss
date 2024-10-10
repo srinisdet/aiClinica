@@ -1,0 +1,77 @@
+.report-list-container {
+  width: 100%;
+  margin: 0;
+  box-shadow: none; /* Removed box shadow or any border */
+}
+mat-list {
+  padding: 0;
+}
+.report-list {
+  height: 400px; /* Fixed height */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+.report-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  padding: 10px;
+  cursor: pointer; /* Makes the row clickable */
+}
+
+.report-col {
+  width: 25%;
+  text-align: left;
+}
+
+.report-label {
+  font-weight: bold;
+  font-size: 16px;
+}
+.report-value {
+  font-size: 14px;
+}
+.report-table-header {
+  background-color: rgba(245, 223, 191, 0.8);
+}
+.clickable-item:hover {
+  background-color: #fadbb1; /* Adds hover effect */
+}
+/* Alternating row colors */
+.odd-row {
+  background-color: rgba(
+    252,
+    245,
+    235,
+    0.8
+  ); /* Light gray background for even rows */
+}
+
+.even-row {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* White background for odd rows */
+}
+.mat-paginator {
+  margin-top: 20px;
+}
+button {
+  i {
+    margin-right: 4px;
+  }
+}
+.submittedby {
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  mat-icon {
+    margin-right: 4px;
+  }
+}
+.view-pdf {
+  font-weight: 400;
+}

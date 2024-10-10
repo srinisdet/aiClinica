@@ -1,0 +1,58 @@
+<div class="report-list-container">
+  <mat-list class="report-list">
+    <mat-list-item class="report-table-header">
+      <div class="report-row">
+        <div class="report-col">
+          <span class="report-label">Submitted By</span>
+        </div>
+        <div class="report-col">
+          <span class="report-label">Date</span>
+        </div>
+        <div class="report-col">
+          <span class="report-label">Report Name</span>
+        </div>
+        <div class="report-col report-label">Actions</div>
+      </div></mat-list-item
+    >
+    <!-- Iterate over each report and display in the list -->
+    <mat-list-item
+      *ngFor="let report of reportData; let i = index"
+      (click)="onRowClick(report)"
+      [ngClass]="{ 'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0 }"
+      class="clickable-item"
+    >
+      <div class="report-row">
+        <!-- Submitted By -->
+        <div class="report-col submittedby">
+          <mat-icon matListItemIcon>person</mat-icon>
+          <span class="report-value">{{ report.submittedBy }}</span>
+        </div>
+
+        <!-- Date -->
+        <div class="report-col">
+          <span class="report-value">{{ report.date }}</span>
+        </div>
+
+        <!-- Report Name -->
+        <div class="report-col">
+          <span class="report-value">{{ report.reportName }}</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="report-col">
+          <button mat-button (click)="onActionClick($event, report)">
+            <i class="material-icons">picture_as_pdf</i
+            ><span class="view-pdf">View</span>
+          </button>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+  <!-- Pagination -->
+  <mat-paginator
+    [length]="reportData.length"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

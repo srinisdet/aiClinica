@@ -1,9 +1,19 @@
+.top-nav {
+  background-color: #b3dcce;
+  color: #000000;
+  font-weight: 600;
+  z-index: 1000;
+  height: 64px;
+}
+
 .sidenav-container {
-  height: 100%;
+  height: calc(100vh - 64px);
 }
 
 .sidenav {
   width: 200px;
+  background-color: #042c22;
+  top: 64px !important;
 }
 
 .sidenav .mat-toolbar {
@@ -15,16 +25,134 @@
   top: 0;
   z-index: 1;
 }
-
+.company {
+  color: #fdfdfd;
+}
 .menu-item {
   display: flex;
+  font-size: 16px;
   align-items: center;
-  .material-icons {
-    margin-right: 8px; /* Adds some spacing between the icon and the text */
-    font-size: 24px; /* Adjust the icon size if needed */
+  color: #fdfdfd;
+
+  mat-icon {
+    margin-right: 4px;
+  }
+  i {
+    margin-right: 8px;
   }
 }
 .menu-item span {
   display: inline-block;
   vertical-align: middle;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.my-profile {
+  color: Black !important;
+}
+
+.profile-button {
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  color: #fefefe; /* Text color */
+  font-size: 16px; /* Font size for the button text */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align icon and text */
+  cursor: pointer; /* Change cursor on hover */
+  .profile-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #042c22;
+  }
+}
+.mat-icon {
+  margin-right: 8px; /* Add space between icon and text */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  margin-right: 8px;
+  border: 1px solid rgb(2, 39, 37);
+  border-radius: 32px;
+  padding: 8px;
+}
+
+.search-icon {
+  cursor: pointer;
+  color: #01074e;
+  font-weight: 600px;
+}
+.search-input {
+  border: none;
+  background-color: transparent;
+  color: #000000;
+  outline: none;
+  width: 100%;
+  padding-left: 8px;
+  font-size: 16px;
+}
+.color-icon {
+  color: #042c22;
+}
+mat-nav-list {
+  a {
+    height: 56px;
+  }
+}
+.mat-list-item {
+  color: #ffffff; /* Normal text color for nav items */
+  background-color: transparent; /* Background color for nav items */
+
+  &:hover {
+    background-color: #1d4138; /* Change background color on hover */
+  }
+}
+.active-nav {
+  span {
+    color: #000000 !important; /* Active text color */
+    font-weight: 600;
+  }
+  background-color: #b3dcce; /* Active background color */
+  font-weight: bold; /* Make the active item bold */
+}
+
+.active-nav:hover {
+  background-color: #7d9a90; /* Background color when hovering over active item */
+}
+
+.footer {
+  width: 100%; /* Make the footer span the full width */
+  height: 64px; /* Set the height for the footer */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: #b3dcce; /* Material primary color */
+  color: #00281b; /* Text color */
+  margin-top: 38px; /* Optional: Add space between content and footer */
+}
+
+.company-title {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  img {
+    height: 50px;
+    width: 50px;
+    margin-right: 16px;
+  }
+  span {
+    font-size: 36px;
+  }
 }

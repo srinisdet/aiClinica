@@ -1,14 +1,92 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Reports - Clinical Study</h1>
-  <mat-card class="dashboard-card">
+  <mat-card class="reports-card">
     <mat-card-header>
-      <mat-card-title>Clinical Data Analysis</mat-card-title></mat-card-header
-    >
-    <mat-card-content class="dashboard-card-content">
+      <div class="reports-title">
+        <div>
+          <mat-card-title>Reports - Clinical Data Analysis</mat-card-title>
+        </div>
+        <div>
+          <button mat-button class="add-report">
+            <mat-icon>add</mat-icon>
+            Add Report
+          </button>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="reports-card-content">
       <div class="card-content">
-        <app-doughnut-echart></app-doughnut-echart>
-        <div class="report-content">Data here</div>
-      </div></mat-card-content
-    >
+        <div class="doughnut-chart">
+          <app-doughnut-echart></app-doughnut-echart>
+        </div>
+        <div class="report-content">
+          <app-reports-list></app-reports-list>
+        </div></div
+    ></mat-card-content>
+  </mat-card>
+  <mat-card class="reports-card">
+    <app-gradient-vertical-bar></app-gradient-vertical-bar>
+    <div class="metrics">
+      <app-pie-grid
+        class="metric-item"
+        [CurrentNumber]="4"
+        [TotalNumber]="10"
+        [PieTitle]="'Study Team Effectiveness'"
+        [activeColor]="'#CC3000'"
+        [secondColor]="'#F08160'"
+        [textColor]="'#354C33'"
+        [iconName]="'analytics'"
+      ></app-pie-grid>
+      <app-pie-grid
+        class="metric-item"
+        [CurrentNumber]="9"
+        [TotalNumber]="10"
+        [PieTitle]="'Regulatory Compliance'"
+        [activeColor]="'#267B1F'"
+        [secondColor]="'#BDDABA'"
+        [textColor]="'#354C33'"
+        [iconName]="'policy'"
+      ></app-pie-grid>
+      <app-pie-grid
+        class="metric-item"
+        [CurrentNumber]="6"
+        [TotalNumber]="10"
+        [PieTitle]="'User Feedback'"
+        [activeColor]="'#F2B028'"
+        [secondColor]="'#F7CF7E'"
+        [textColor]="'#354C33'"
+        [iconName]="'feedback'"
+      ></app-pie-grid>
+      <app-pie-grid
+        class="metric-item"
+        [CurrentNumber]="8"
+        [TotalNumber]="10"
+        [PieTitle]="'Process Improvement'"
+        [activeColor]="'#267B1F'"
+        [secondColor]="'#BDDABA'"
+        [textColor]="'#354C33'"
+        [iconName]="'auto_graph'"
+      ></app-pie-grid>
+      <app-pie-grid
+        class="metric-item"
+        [CurrentNumber]="8"
+        [TotalNumber]="10"
+        [PieTitle]="'Knowledge Transfer'"
+        [activeColor]="'#267B1F'"
+        [secondColor]="'#BDDABA'"
+        [textColor]="'#354C33'"
+        [iconName]="'lightbulb'"
+      ></app-pie-grid>
+      <app-pie-grid
+        class="metric-item"
+        [CurrentNumber]="4"
+        [TotalNumber]="10"
+        [PieTitle]="'Effective Communication'"
+        [activeColor]="'#CC3000'"
+        [secondColor]="'#F08160'"
+        [textColor]="'#354C33'"
+        [iconName]="'feedback'"
+        [iconName]="'email'"
+      ></app-pie-grid>
+    </div>
   </mat-card>
 </div>

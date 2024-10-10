@@ -15,11 +15,12 @@ export class PieGridComponent {
   @Input() activeColor: string = '#000';
   @Input() secondColor: string = '#D8D8D8';
   @Input() textColor: string = '#272727';
+  @Input() iconName: string = '';
 
   single: any[] = [];
   colorScheme!: Color;
 
-  view: [number, number] = [180, 180]; //height & width
+  view: [number, number] = [120, 120]; //height & width
 
   constructor() {
     Object.assign(this, { this: this.single });
