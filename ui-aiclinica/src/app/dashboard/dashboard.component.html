@@ -9,6 +9,70 @@
     gutterSize="0px"
     class="dynamic-grid"
   >
+    <!-- Tile 3 -->
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Total Research Analysis</mat-card-title
+          ></mat-card-header
+        >
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-content">
+            <app-gradient-vertical-bar></app-gradient-vertical-bar></div
+        ></mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <!-- Tile 2 -->
+    <mat-grid-tile colspan="1" rowspan="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title> My Schedule</mat-card-title></mat-card-header
+        >
+        <mat-card-content class="dashboard-card-content">
+          <div class="card-content">
+            <!-- <app-echart-vertical-bar></app-echart-vertical-bar> -->
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Select a date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Choose a date"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+            <mat-card class="calendar">
+              <mat-calendar
+                [(selected)]="selectedDate"
+                (selectedChange)="onDateSelected($event)"
+              ></mat-calendar>
+            </mat-card>
+            <div class="event-list" *ngIf="selectedDate">
+              <mat-card>
+                <h4>Events on {{ selectedDate | date : "fullDate" }}</h4>
+                <mat-list class="events">
+                  <mat-list-item *ngFor="let event of filteredEvents">
+                    <div class="event-item">
+                      <div class="icon"><mat-icon>event</mat-icon></div>
+                      <span class="event-name">{{ event.name }}</span>
+                      <span class="event-time">{{ event.time }}</span>
+                    </div>
+                  </mat-list-item>
+                  <div *ngIf="filteredEvents?.length === 0">
+                    No events for this day.
+                  </div>
+                </mat-list>
+              </mat-card>
+            </div>
+          </div></mat-card-content
+        >
+      </mat-card>
+    </mat-grid-tile>
+
     <mat-grid-tile colspan="2" rowspan="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
@@ -102,71 +166,6 @@
             </div>
           </div>
         </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-    <!-- Tile 2 -->
-    <mat-grid-tile colspan="1" rowspan="2">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title> My Schedule</mat-card-title></mat-card-header
-        >
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-content">
-            <!-- <app-echart-vertical-bar></app-echart-vertical-bar> -->
-            <!-- <mat-form-field appearance="outline">
-              <mat-label>Select a date</mat-label>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                placeholder="Choose a date"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field> -->
-            <mat-card class="calendar">
-              <mat-calendar
-                [(selected)]="selectedDate"
-                (selectedChange)="onDateSelected($event)"
-              ></mat-calendar>
-            </mat-card>
-            <div class="event-list" *ngIf="selectedDate">
-              <mat-card>
-                <h4>Events on {{ selectedDate | date : "fullDate" }}</h4>
-                <mat-list class="events">
-                  <mat-list-item *ngFor="let event of filteredEvents">
-                    <div class="event-item">
-                      <div class="icon"><mat-icon>event</mat-icon></div>
-                      <span class="event-name">{{ event.name }}</span>
-                      <span class="event-time">{{ event.time }}</span>
-                    </div>
-                  </mat-list-item>
-                  <div *ngIf="filteredEvents?.length === 0">
-                    No events for this day.
-                  </div>
-                </mat-list>
-              </mat-card>
-            </div>
-          </div></mat-card-content
-        >
-      </mat-card>
-    </mat-grid-tile>
-
-    <!-- Tile 3 -->
-    <mat-grid-tile colspan="2" rowspan="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            Total Research Analysis</mat-card-title
-          ></mat-card-header
-        >
-        <mat-card-content class="dashboard-card-content">
-          <div class="card-content">
-            <app-gradient-vertical-bar></app-gradient-vertical-bar></div
-        ></mat-card-content>
       </mat-card>
     </mat-grid-tile>
 

@@ -1,0 +1,23 @@
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 500px; /* Set maximum height for the table */
+  width: 100%; /* Full width of the container */
+}
+
+.mat-header-cell {
+  background-color: #3f51b5; /* Set header background color */
+  color: white; /* Set header text color */
+}
+
+.mat-cell {
+  border-bottom: 1px solid #ddd; /* Optional: Add bottom border for rows */
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #f9f9f9; /* Banded rows for easier readability */
+}
+
+.mat-row:nth-child(even) {
+  background-color: #ffffff; /* Banded rows for easier readability */
+}

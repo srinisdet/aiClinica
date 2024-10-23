@@ -1,0 +1,112 @@
+.grid-container {
+  margin: 24px;
+}
+.main-content {
+  padding: 8px;
+}
+mat-header-cell {
+  cursor: pointer;
+}
+
+mat-header-cell:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+mat-sort-header-arrow {
+  opacity: 1 !important;
+}
+/* Ensure the table stretches to 100% of the container */
+table {
+  width: 100%;
+}
+
+.report-table-header {
+  background-color: rgba(245, 223, 191, 0.8) !important;
+  font-weight: bold;
+}
+.odd-row {
+  background-color: rgba(
+    252,
+    245,
+    235,
+    0.8
+  ); /* Light gray background for even rows */
+}
+
+.even-row {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* White background for odd rows */
+}
+.banded-row {
+  background-color: #f2f2f2; /* Light gray background for banded rows */
+}
+
+/* Make the container div scrollable if table content overflows horizontally and vertically */
+.data-table {
+  overflow: auto; /* Enable both horizontal and vertical scrolling */
+  max-width: 100%; /* Max width should be the container width */
+  height: 400px; /* Set a fixed height for vertical scrolling */
+  border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+}
+
+/* You can set a minimum width for the table if needed */
+table.mat-table {
+  min-width: 800px; /* Ensure a minimum width to force scrolling */
+}
+
+/* Optional: Adjust the appearance of scrollbars in some browsers */
+.data-table::-webkit-scrollbar {
+  width: 10px; /* Width of vertical scrollbar */
+  height: 10px; /* Height of horizontal scrollbar */
+}
+
+.data-table::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners for the scrollbar thumb */
+}
+
+.data-table::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color on hover */
+}
+
+.upload-header {
+  margin-top: 8px;
+}
+
+.add-report {
+  width: 180px;
+  background-color: #0c5533;
+  border-radius: 16px;
+
+  color: #fdfdfd;
+  padding: 0 16px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for transform and color */
+
+  &:hover {
+    transform: scale(1.02);
+    background-color: #094428;
+    color: #fdfdfd;
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
+  width: 100%;
+}
+.custom-spinner .mat-progress-spinner circle,
+.custom-spinner .mat-progress-spinner mat-progress-spinner {
+  stroke: #0c5533; /* Custom color, replace with your desired color */
+}

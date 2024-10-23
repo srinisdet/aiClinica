@@ -59,25 +59,45 @@
         routerLink="/dashboard"
         routerLinkActive="active-nav"
         class="mat-list-item"
+        (click)="setActiveMenu('dashboard')"
         ><span class="menu-item"
           ><i class="material-icons">dashboard</i><span>Dashboard</span></span
         ></a
       >
-      <a
-        mat-list-item
-        routerLink="/reports"
-        routerLinkActive="active-nav"
-        class="mat-list-item"
-        ><span class="menu-item"
-          ><i class="material-icons">document_scanner</i
-          ><span>Reports</span></span
-        ></a
+      <mat-nav-list>
+        <a
+          mat-list-item
+          routerLink="/reports"
+          routerLinkActive="active-nav"
+          class="mat-list-item"
+          (click)="setActiveMenu('reports')"
+          ><span class="menu-item"
+            ><i class="material-icons">document_scanner</i
+            ><span>Reports</span></span
+          ></a
+        ><mat-nav-list class="sub-list" *ngIf="activeMenu === 'reports'">
+          <a
+            mat-list-item
+            [routerLink]="['/reports/load-report']"
+            routerLinkActive="active-sub-nav"
+            class="sub-menu"
+            ><span class="sub-menu-item">Load New Report</span></a
+          >
+          <a
+            mat-list-item
+            [routerLink]="['/reports/b']"
+            class="sub-menu"
+            routerLinkActive="active-sub-nav"
+            ><span class="sub-menu-item">Report analysis</span></a
+          >
+        </mat-nav-list></mat-nav-list
       >
       <a
         mat-list-item
         routerLink="/calendar"
         routerLinkActive="active-nav"
         class="mat-list-item"
+        (click)="setActiveMenu('calendar')"
         ><span class="menu-item"
           ><i class="material-icons">calendar_month</i
           ><span>Calendar</span></span

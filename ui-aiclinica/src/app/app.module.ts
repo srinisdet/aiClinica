@@ -36,6 +36,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MAT_DATE_FORMATS } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadNewReportComponent } from './load-new-report/load-new-report.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 export const MY_FORMATS = {
   parse: {
@@ -63,9 +66,11 @@ export const MY_FORMATS = {
     ReportsTableComponent,
     ReportsTable2Component,
     ReportsListComponent,
+    LoadNewReportComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
@@ -87,6 +92,7 @@ export const MY_FORMATS = {
     FormsModule,
     MatDatepickerModule,
     MatInputModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     provideAnimationsAsync(),

@@ -29,6 +29,7 @@
 .company {
   color: #fdfdfd;
 }
+
 .menu-item {
   display: flex;
   font-size: 16px;
@@ -125,6 +126,48 @@ mat-nav-list {
     background-color: #1d4138; /* Change background color on hover */
   }
 }
+.sub-list {
+  padding: 0 !important;
+  border-radius: 0px !important;
+}
+.sub-menu {
+  height: 32px !important;
+  padding: 4px !important;
+  border-radius: 0px !important;
+  span {
+    color: #000000 !important; /* Active text color */
+    font-weight: 600;
+  }
+  background-color: #b3dcce;
+
+  &:hover {
+    background-color: #94b8ab; /* Background color when hovering over active item */
+  }
+
+  .sub-menu-item {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    margin-left: 24px;
+    padding-left: 16px;
+    border-left: 4px solid #4d6e63; /* Change the width and color as needed */
+    border-top-left-radius: 2px; /* Top left border radius */
+    border-bottom-left-radius: 2px;
+
+    mat-icon {
+      margin-right: 4px;
+    }
+    i {
+      margin-right: 8px;
+    }
+  }
+}
+.active-sub-nav {
+  span {
+    font-weight: 600 !important;
+  }
+  background-color: #a1cfbf;
+}
 .active-nav {
   span {
     color: #000000 !important; /* Active text color */
@@ -132,10 +175,11 @@ mat-nav-list {
   }
   background-color: #b3dcce; /* Active background color */
   font-weight: bold; /* Make the active item bold */
+  border-radius: 0px !important;
 }
 
 .active-nav:hover {
-  background-color: #7d9a90; /* Background color when hovering over active item */
+  background-color: #94b8ab; /* Background color when hovering over active item */
 }
 
 .footer {

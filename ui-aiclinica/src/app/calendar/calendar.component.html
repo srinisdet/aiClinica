@@ -1,1 +1,57 @@
-<p>calendar works!</p>
+<div>
+  <input type="file" (change)="onCsvUpload($event)" accept=".csv" />
+</div>
+
+<div class="table-container">
+  <mat-table [dataSource]="filteredData" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="AESCAN">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >AESCAN</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.AESCAN }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AESCONG">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >AESCONG</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.AESCONG }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AESDISAB">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >AESDISAB</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.AESDISAB }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AESDTH">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >AESDTH</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.AESDTH }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AESHOSP">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >AESHOSP</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.AESHOSP }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AESLIFE">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >AESLIFE</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.AESLIFE }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AESOD">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>AESOD</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.AESOD }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

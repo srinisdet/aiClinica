@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,25 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavigationComponent {
   private breakpointObserver = inject(BreakpointObserver);
+  activeMenu: string | null = null;
 
+  constructor(private router: Router) {
+    this.setInitialActiveMenu();
+  }
+  // Function to set the active menu
+  setActiveMenu(menu: string): void {
+    this.activeMenu = this.activeMenu === menu ? null : menu;
+  }
+  setInitialActiveMenu(): void {
+    const currentUrl = this.router.url;
+    if (currentUrl.includes('reportA') || currentUrl.includes('reportB')) {
+      this.activeMenu = 'reports';
+    } else if (currentUrl.includes('settings')) {
+      this.activeMenu = 'settings';
+    } else {
+      this.activeMenu = 'dashboard';
+    }
+  }
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
