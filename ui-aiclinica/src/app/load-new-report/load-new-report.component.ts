@@ -1,9 +1,15 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import * as Papa from 'papaparse';
 
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CsvRow } from '../models/csv-rows';
+import { MatDialog } from '@angular/material/dialog';
 
 // const DisplayColumns = [
 //   'STUDYID',
@@ -40,11 +46,13 @@ export class LoadNewReportComponent {
   ];
 
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
+  @ViewChild('uploadDialog') uploadDialog!: TemplateRef<any>; // TemplateRef for the modal
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource<CsvRow>([]);
     this.loadCsvDataFromSession();
   }
+
   ngAfterViewInit(): void {
     // Connect sorting after the view is initialized
     this.dataSource.sort = this.sort;
@@ -55,10 +63,15 @@ export class LoadNewReportComponent {
       this.file = input.files[0];
     }
   }
-
+  openUploadDialog(): void {
+    this.dialog.open(this.uploadDialog, {
+      width: '400px',
+    });
+  }
   uploadFile(): void {
     if (this.file) {
       this.isLoading = true; // Start showing the loader
+      this.dialog.closeAll(); // Close modal after successful upload
 
       Papa.parse<CsvRow>(this.file, {
         header: true,

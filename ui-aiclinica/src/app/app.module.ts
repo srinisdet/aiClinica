@@ -39,6 +39,8 @@ import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadNewReportComponent } from './load-new-report/load-new-report.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog'; // Import for dialogs
+import { LoginComponent } from './login/login.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -67,6 +69,7 @@ export const MY_FORMATS = {
     ReportsTable2Component,
     ReportsListComponent,
     LoadNewReportComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,6 +96,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatInputModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
   ],
   providers: [
     provideAnimationsAsync(),

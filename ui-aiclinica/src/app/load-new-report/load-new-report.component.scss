@@ -1,8 +1,10 @@
 .grid-container {
   margin: 24px;
+  min-height: 480px;
 }
 .main-content {
   padding: 8px;
+  min-height: 200px;
 }
 mat-header-cell {
   cursor: pointer;
@@ -106,7 +108,19 @@ table.mat-table {
   max-height: 500px;
   width: 100%;
 }
-.custom-spinner .mat-progress-spinner circle,
-.custom-spinner .mat-progress-spinner mat-progress-spinner {
-  stroke: #0c5533; /* Custom color, replace with your desired color */
+// .custom-spinner .mat-progress-spinner circle,
+// .custom-spinner .mat-progress-spinner mat-progress-spinner {
+//   stroke: #0c5533; /* Custom color, replace with your desired color */
+// }
+// .mat-progress-spinner ::ng-deep circle,
+// .mat-spinner ::ng-deep circle {
+//   stroke: red !important;
+// }
+
+.file-upload {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 15px;
 }

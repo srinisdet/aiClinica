@@ -61,7 +61,7 @@ export class NavigationComponent {
   }
 
   onLogout() {
-    console.log('Logout clicked');
-    // Add routing or additional functionality for Logout
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
   }
 }
