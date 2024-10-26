@@ -10,9 +10,10 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'reports', component: ReportsComponent },
   { path: 'reports/load-report', component: LoadNewReportComponent }, // Sub-navigation for Reports
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'calendar', component: CalendarComponent },
   { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({

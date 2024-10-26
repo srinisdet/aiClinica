@@ -1,0 +1,167 @@
+.login-container {
+  display: flex;
+  width: 100%;
+
+  .left-section {
+    width: 60%;
+    min-height: 560px;
+    height: 100vh;
+    background-image: url("/assets/images/login-img.jpg"); /* Set the background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: rgb(0, 30, 100); /* Change text color to white for contrast */
+    position: relative; /* Relative positioning for overlay */
+
+    .overlay {
+      display: inline-block; /* This ensures the width matches the content */
+      background: linear-gradient(
+        to right,
+        transparent,
+        #260cbca5 10%,
+        transparent
+      ); /* Gradient background */
+      padding: 10px 20px; /* Optional padding around the text */
+      margin-bottom: 24px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .overlay h1 {
+      margin: 0; /* Remove margin from h1 */
+      color: #000055; /* Solid text color */
+      font-size: 3rem; /* Adjust size as needed */
+      font-weight: bold; /* Optional for making the text bold */
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    }
+
+    img {
+      max-width: 100%;
+      //   border-radius: 10px;
+    }
+  }
+
+  .right-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* White */
+  }
+}
+
+.logo-header {
+  width: 70%;
+  padding: 0 40px;
+  border: 1px solid #004d40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, transparent, #52bbaa 100%, transparent);
+}
+
+.login-box {
+  width: 70%;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  h2 {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 0px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #001b16; /* Muted Slate */
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #004d40; /* Pale Frost Blue */
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #004d40; /* Frost Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .additional-options {
+    margin-top: 20px;
+    text-align: center;
+
+    a {
+      color: #4d96ff; /* Bright Blue */
+      margin: 0 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Space below the checkbox */
+
+  input[type="checkbox"] {
+    margin-right: 10px; // Space between checkbox and label
+    width: 20px !important;
+  }
+
+  label {
+    font-size: 14px;
+    color: #e0f2f1; // Consistent text color
+    margin-bottom: 0 !important;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 16px;
+  background: transparent;
+  color: #004d40;
+  width: 100%;
+  margin-right: 16px;
+
+  .logo {
+    display: flex;
+    background: transparent;
+    img {
+      height: 70px;
+      margin-right: 8px;
+      filter: drop-shadow(0px 1000px 0 #065f41);
+      transform: translateY(-1000px);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-right: 16px;
+    }
+  }
+}
+.error {
+  color: #cc3d00;
+  font-weight: 500;
+}

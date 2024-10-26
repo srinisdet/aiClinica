@@ -1,1 +1,6 @@
-<app-navigation></app-navigation>
+<ng-container *ngIf="router.url !== '/login'">
+  <app-navigation></app-navigation
+></ng-container>
+<ng-container *ngIf="router.url === '/login'">
+  <router-outlet></router-outlet
+></ng-container>
